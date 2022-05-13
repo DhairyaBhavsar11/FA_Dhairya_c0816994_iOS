@@ -136,7 +136,7 @@ class ViewController: UIViewController
     
     func resetBoard()
     {
-        for button in boardv
+        for button in board
         {
             button.setTitle(nil, for: .normal)
             button.isEnabled = true
