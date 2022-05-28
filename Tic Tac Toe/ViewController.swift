@@ -80,6 +80,38 @@ class ViewController: UIViewController
         }
     }
     
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?)
+    {
+       
+        
+        if motion == .motionShake{
+            
+            print("Shake Gesture Recognized !!")
+            
+           checkForUndo()
+            
+            
+            if(currentTurn == Turn.Nought)
+            {
+                
+                currentTurn = Turn.Cross
+                turnLabel.text = CROSS
+            }
+            else if(currentTurn == Turn.Cross)
+            {
+                
+                currentTurn = Turn.Nought
+                turnLabel.text = NOUGHT
+            }
+                
+            
+            
+            
+        }
+       
+        
+    }
+    
     func checkForVictory(_ s :String) -> Bool
     {
         // Horizontal Victory
@@ -123,10 +155,111 @@ class ViewController: UIViewController
         return false
     }
     
+    
+    func checkForUndo()
+    {
+        
+        for button in board
+        {
+            if button == a1
+            {
+                button.setTitle(nil, for: .normal)
+                button.isEnabled = true
+            }
+            if button == a2
+            {
+                button.setTitle(nil, for: .normal)
+                button.isEnabled = true
+            }
+            if button == a3
+            {
+                button.setTitle(nil, for: .normal)
+                button.isEnabled = true
+            }
+            if button == b1
+            {
+                button.setTitle(nil, for: .normal)
+                button.isEnabled = true
+            }
+            if button == b2
+            {
+                button.setTitle(nil, for: .normal)
+                button.isEnabled = true
+            }
+            if button == b3
+            {
+                button.setTitle(nil, for: .normal)
+                button.isEnabled = true
+            }
+            if button == c1
+            {
+                button.setTitle(nil, for: .normal)
+                button.isEnabled = true
+            }
+            if button == c2
+            {
+                button.setTitle(nil, for: .normal)
+                button.isEnabled = true
+            }
+            if button == c3
+            {
+                button.setTitle(nil, for: .normal)
+                button.isEnabled = true
+            }
+            
+        }
+        
+     /*   if thatSymbol(a1)
+        {
+            a1.setTitle("", for: .normal)
+        }
+        if thatSymbol(a2)
+        {
+            a2.setTitle("", for: .normal)
+        }
+        if thatSymbol(a3)
+        {
+            a3.setTitle("", for: .normal)
+        }
+        if thatSymbol(b1)
+        {
+            b1.setTitle("", for: .normal)
+        }
+        if thatSymbol(b2)
+        {
+            b2.setTitle("", for: .normal)
+        }
+        if thatSymbol(b3)
+        {
+            b3.setTitle("", for: .normal)
+        }
+        if thatSymbol(c1)
+        {
+            c1.setTitle("", for: .normal)
+        }
+        if thatSymbol(c2)
+        {
+            c2.setTitle("", for: .normal)
+        }
+        if thatSymbol(c3)
+        {
+            c3.setTitle("", for: .normal)
+        }*/
+        
+    }
+    
     func thisSymbol(_ button: UIButton, _ symbol: String) -> Bool
     {
         return button.title(for: .normal) == symbol
     }
+    
+    func thatSymbol(_ button: UIButton) -> Bool
+    {
+        return (button.title(for: .normal) != nil)
+    }
+    
+    
+    
     
     func resultAlert(title: String)
     {
@@ -190,6 +323,7 @@ class ViewController: UIViewController
         }
     }
     
+  
 }
 
 
