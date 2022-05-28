@@ -24,6 +24,8 @@ class ViewController: UIViewController
     @IBOutlet weak var c1: UIButton!
     @IBOutlet weak var c2: UIButton!
     @IBOutlet weak var c3: UIButton!
+    @IBOutlet weak var ScoreX: UILabel!
+    @IBOutlet weak var ScoreO: UILabel!
     
     var firstTurn = Turn.Cross
     var currentTurn = Turn.Cross
@@ -62,12 +64,14 @@ class ViewController: UIViewController
         {
             crossesScore += 1
             resultAlert(title: "Crosses Win!")
+            ScoreX.text = "Score X : \(crossesScore)"
         }
         
         if checkForVictory(NOUGHT)
         {
             noughtsScore += 1
             resultAlert(title: "Noughts Win!")
+            ScoreO.text = "Score 0 : \(noughtsScore)"
         }
         
         if(fullBoard())
