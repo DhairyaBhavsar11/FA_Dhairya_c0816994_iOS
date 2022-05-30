@@ -105,6 +105,68 @@ class ViewController: UIViewController
         initBoard()
     }
     
+    @IBAction func swipeLeftOrRight(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction
+        {
+        case .right:
+            let message = "RESET GAME?"
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
+                self.resetBoard()
+                self.ScoreX.text = "Score X :"
+                self.ScoreO.text = "Score O :"
+                CoreDataHelper.instance.resetCoreData()
+            }))
+            self.present(ac, animated: true)
+            
+        case .left:
+            let message = "RESET GAME?"
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
+                self.resetBoard()
+                self.ScoreX.text = "Score X :"
+                self.ScoreO.text = "Score O :"
+                CoreDataHelper.instance.resetCoreData()
+            }))
+            self.present(ac, animated: true)
+            
+        default:
+            break
+            
+        }
+    }
+    
+    
+    /*@objc func swipeGesture(_ sender: UISwipeGestureRecognizer?)
+    {
+        if let swipeGesture = sender
+        {
+            switch swipeGesture.direction
+            {
+            case UISwipeGestureRecognizer.Direction.right:
+                let message = "RESET GAME?"
+                let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+                ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
+                    self.resetBoard()
+                }))
+                CoreDataHelper.instance.resetCoreData()
+                self.present(ac, animated: true)
+                
+            case UISwipeGestureRecognizer.Direction.left:
+                let message = "RESET GAME?"
+                let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+                ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
+                    self.resetBoard()
+                }))
+                CoreDataHelper.instance.resetCoreData()
+                self.present(ac, animated: true)
+                
+            default:
+                break
+            }
+        }
+    }*/
+    
     func getNextMove(move : String) -> String {
         if move == "X" {
             return "O"

@@ -19,6 +19,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background " translatesAutoresizingMaskIntoConstraints="NO" id="a3a-mU-8JN">
                                 <rect key="frame" x="-15" y="-10" width="444" height="919"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Kp2-gH-tvM">
                                 <rect key="frame" x="32" y="273" width="350" height="350"/>
@@ -176,10 +177,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Kp2-gH-tvM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Quh-dz-br2"/>
                             <constraint firstItem="Kp2-gH-tvM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zO0-98-MJl"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="08M-7Z-ece" appends="YES" id="rAK-7Q-oC3"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="ScoreO" destination="byj-YX-ew0" id="iaU-aW-NZC"/>
@@ -197,6 +202,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="08M-7Z-ece">
+                    <connections>
+                        <action selector="swipeLeftOrRight:" destination="BYZ-38-t0r" id="H5k-g5-pHj"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5.7971014492753632" y="48.883928571428569"/>
         </scene>
