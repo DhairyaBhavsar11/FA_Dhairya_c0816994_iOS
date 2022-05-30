@@ -113,10 +113,10 @@ class ViewController: UIViewController
             let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
             ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
                 self.resetBoard()
-                self.ScoreX.text = "Score X :"
-                self.ScoreO.text = "Score O :"
                 self.noughtsScore = 0
                 self.crossesScore = 0
+                self.ScoreX.text = "Score X : \(self.crossesScore)"
+                self.ScoreO.text = "Score O : \(self.noughtsScore)"
                 CoreDataHelper.instance.resetCoreData()
             }))
             self.present(ac, animated: true)
@@ -126,10 +126,10 @@ class ViewController: UIViewController
             let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
             ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
                 self.resetBoard()
-                self.ScoreX.text = "Score X : \(self.crossesScore)"
-                self.ScoreO.text = "Score O : \(self.noughtsScore)"
                 self.noughtsScore = 0
                 self.crossesScore = 0
+                self.ScoreX.text = "Score X : \(self.crossesScore)"
+                self.ScoreO.text = "Score O : \(self.noughtsScore)"
                 CoreDataHelper.instance.resetCoreData()
             }))
             self.present(ac, animated: true)
@@ -139,37 +139,6 @@ class ViewController: UIViewController
             
         }
     }
-    
-    
-    /*@objc func swipeGesture(_ sender: UISwipeGestureRecognizer?)
-    {
-        if let swipeGesture = sender
-        {
-            switch swipeGesture.direction
-            {
-            case UISwipeGestureRecognizer.Direction.right:
-                let message = "RESET GAME?"
-                let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-                ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
-                    self.resetBoard()
-                }))
-                CoreDataHelper.instance.resetCoreData()
-                self.present(ac, animated: true)
-                
-            case UISwipeGestureRecognizer.Direction.left:
-                let message = "RESET GAME?"
-                let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-                ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
-                    self.resetBoard()
-                }))
-                CoreDataHelper.instance.resetCoreData()
-                self.present(ac, animated: true)
-                
-            default:
-                break
-            }
-        }
-    }*/
     
     func getNextMove(move : String) -> String {
         if move == "X" {
