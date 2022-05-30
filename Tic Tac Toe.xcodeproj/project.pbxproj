@@ -16,6 +16,8 @@
 		B60C1989282EA20B00213976 /* Tic_Tac_ToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C1988282EA20B00213976 /* Tic_Tac_ToeTests.swift */; };
 		B60C1993282EA20B00213976 /* Tic_Tac_ToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C1992282EA20B00213976 /* Tic_Tac_ToeUITests.swift */; };
 		B60C1995282EA20B00213976 /* Tic_Tac_ToeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C1994282EA20B00213976 /* Tic_Tac_ToeUITestsLaunchTests.swift */; };
+		B657CB4628442BF600B79D7A /* Tic-Tac-Toe-Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B657CB4428442BF600B79D7A /* Tic-Tac-Toe-Model.xcdatamodeld */; };
+		B657CB5028443C3800B79D7A /* coredatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657CB4F28443C3800B79D7A /* coredatamanager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B60C198E282EA20B00213976 /* Tic Tac ToeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tic Tac ToeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60C1992282EA20B00213976 /* Tic_Tac_ToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_Tac_ToeUITests.swift; sourceTree = "<group>"; };
 		B60C1994282EA20B00213976 /* Tic_Tac_ToeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_Tac_ToeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B657CB4528442BF600B79D7A /* Tic-Tac-Toe-Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Tic-Tac-Toe-Model.xcdatamodel"; sourceTree = "<group>"; };
+		B657CB4F28443C3800B79D7A /* coredatamanager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = coredatamanager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		B60C1970282EA20900213976 /* Tic Tac Toe */ = {
 			isa = PBXGroup;
 			children = (
+				B657CB4F28443C3800B79D7A /* coredatamanager.swift */,
 				B60C1971282EA20900213976 /* AppDelegate.swift */,
 				B60C1973282EA20900213976 /* SceneDelegate.swift */,
 				B60C1975282EA20900213976 /* ViewController.swift */,
@@ -106,6 +111,7 @@
 				B60C197A282EA20B00213976 /* Assets.xcassets */,
 				B60C197C282EA20B00213976 /* LaunchScreen.storyboard */,
 				B60C197F282EA20B00213976 /* Info.plist */,
+				B657CB4428442BF600B79D7A /* Tic-Tac-Toe-Model.xcdatamodeld */,
 			);
 			path = "Tic Tac Toe";
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B60C1976282EA20900213976 /* ViewController.swift in Sources */,
+				B657CB5028443C3800B79D7A /* coredatamanager.swift in Sources */,
 				B60C1972282EA20900213976 /* AppDelegate.swift in Sources */,
+				B657CB4628442BF600B79D7A /* Tic-Tac-Toe-Model.xcdatamodeld in Sources */,
 				B60C1974282EA20900213976 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,6 +610,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B657CB4428442BF600B79D7A /* Tic-Tac-Toe-Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B657CB4528442BF600B79D7A /* Tic-Tac-Toe-Model.xcdatamodel */,
+			);
+			currentVersion = B657CB4528442BF600B79D7A /* Tic-Tac-Toe-Model.xcdatamodel */;
+			path = "Tic-Tac-Toe-Model.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B60C1966282EA20900213976 /* Project object */;
 }
