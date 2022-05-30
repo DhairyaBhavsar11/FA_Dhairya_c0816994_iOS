@@ -115,6 +115,8 @@ class ViewController: UIViewController
                 self.resetBoard()
                 self.ScoreX.text = "Score X :"
                 self.ScoreO.text = "Score O :"
+                self.noughtsScore = 0
+                self.crossesScore = 0
                 CoreDataHelper.instance.resetCoreData()
             }))
             self.present(ac, animated: true)
@@ -124,8 +126,10 @@ class ViewController: UIViewController
             let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
             ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
                 self.resetBoard()
-                self.ScoreX.text = "Score X :"
-                self.ScoreO.text = "Score O :"
+                self.ScoreX.text = "Score X : \(self.crossesScore)"
+                self.ScoreO.text = "Score O : \(self.noughtsScore)"
+                self.noughtsScore = 0
+                self.crossesScore = 0
                 CoreDataHelper.instance.resetCoreData()
             }))
             self.present(ac, animated: true)
